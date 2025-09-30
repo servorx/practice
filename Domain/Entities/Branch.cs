@@ -1,0 +1,16 @@
+namespace Domain.Entities;
+
+using Domain.ValueObjects;
+
+public class Branch
+{
+    public int Id { get; set; }
+    public EntityName NumberCommercial { get; set; } = null!;
+    public Address Address { get; set; } = null!;
+    public Email Email { get; set; } = null!;
+    public ContactName ContactName { get; set; } = null!;
+    public PhoneNumber Phone { get; set; } = null!;
+    // estos son las relaciones
+    public City City { get; set; } = null!;
+    public Company Company { get; set; } = null!;
+}

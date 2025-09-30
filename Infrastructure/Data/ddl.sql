@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS companies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(120) NOT NULL,
     -- el uk es united kingdom y el niu es el registro unico tributario
-    uk_niun INT NOT NULL,
+    uk_niu INT NOT NULL,
     address VARCHAR(80) NOT NULL,
     city_id INT NOT NULL,
     email VARCHAR(80) NOT NULL,

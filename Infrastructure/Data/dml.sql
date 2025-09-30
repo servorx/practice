@@ -14,7 +14,7 @@ INSERT INTO cities (name, region_id) VALUES
 ('Santiago', 3);
 
 -- Insertar compañías
-INSERT INTO companies (name, uk_niun, address, city_id, email) VALUES
+INSERT INTO companies (name, uk_niu, address, city_id, email) VALUES
 ('Tech Solutions', 123456, 'Cra 10 #20-30', 1, 'info@techsolutions.com'),
 ('Agro SA', 654321, 'Av. Corrientes 123', 2, 'contacto@agrosa.com'),
 ('Innovatech', 789012, 'Av. Providencia 456', 3, 'contact@innovatech.cl');
