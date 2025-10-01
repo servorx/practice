@@ -5,7 +5,7 @@ using Domain.ValueObjects;
 public class Region
 {
     public int Id { get; set; }
-    public EntityName Name { get; set; } = null!;
+    public EntityName Name { get; set; } = null!; // esto es string
     // Relaciones
     public Country Country { get; set; } = null!;
     // establecer constructor

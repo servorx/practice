@@ -47,29 +47,29 @@
 ---
 
 ## 📌 5. Application — Handlers (Casos de uso / CQRS)
-- [ ] Crear carpeta `Application/Handlers/Countries`
-  - [ ] `CreateCountryHandler.cs`
-  - [ ] `GetCountriesHandler.cs`
-  - [ ] `UpdateCountryHandler.cs`
-  - [ ] `DeleteCountryHandler.cs`
-- [ ] Repetir patrón para:
-  - [ ] Regions
-  - [ ] Cities
-  - [ ] Companies
-  - [ ] Branches
+- [x] Crear carpeta `Application/Handlers/Countries`
+  - [x] `CreateCountryHandler.cs`
+  - [x] `GetCountriesHandler.cs`
+  - [x] `UpdateCountryHandler.cs`
+  - [x] `DeleteCountryHandler.cs`
+- [x] Repetir patrón para:
+  - [x] Regions
+  - [x] Cities
+  - [x] Companies
+  - [x] Branches
 
 ---
 
 ## 📌 6. Api Layer
-- [ ] Crear carpeta `Api/DTOs`
-  - [ ] `CountryDto.cs`
-  - [ ] `RegionDto.cs`
-  - [ ] `CityDto.cs`
-  - [ ] `CompanyDto.cs`
-  - [ ] `BranchDto.cs`
-- [ ] Crear carpeta `Api/Mappings`
-  - [ ] Configurar AutoMapper Profile (Domain ↔ DTO)
-- [ ] Crear carpeta `Api/Controllers`
+- [x] Crear carpeta `Api/DTOs`
+  - [x] `CountryDto.cs`
+  - [x] `RegionDto.cs`
+  - [x] `CityDto.cs`
+  - [x] `CompanyDto.cs`
+  - [x] `BranchDto.cs`
+- [x] Crear carpeta `Api/Mappings`
+  - [x] Configurar AutoMapper Profile (Domain ↔ DTO)
+- [x] Crear carpeta `Api/Controllers`
   - [ ] `CountriesController.cs`
   - [ ] `RegionsController.cs`
   - [ ] `CitiesController.cs`
