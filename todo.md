@@ -23,13 +23,13 @@
 ---
 
 ## 📌 3. Application — Abstractions
-- [ ] Crear interfaces en `Application/Abstractions`
-  - [ ] `ICountryRepository.cs`
-  - [ ] `IRegionRepository.cs`
-  - [ ] `ICityRepository.cs`
-  - [ ] `ICompanyRepository.cs`
-  - [ ] `IBranchRepository.cs`
-- [ ] Definir `IUnitOfWork.cs` con métodos `SaveChangesAsync()`
+- [x] Crear interfaces en `Application/Abstractions`
+  - [x] `ICountryRepository.cs`
+  - [x] `IRegionRepository.cs`
+  - [x] `ICityRepository.cs`
+  - [x] `ICompanyRepository.cs`
+  - [x] `IBranchRepository.cs`
+- [x] Definir `IUnitOfWork.cs` con métodos `SaveChangesAsync()`
 
 ---
 
