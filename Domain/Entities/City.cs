@@ -9,4 +9,11 @@ public class City
 
     // Relaciones
     public Region Region { get; set; } = null!;
+    // definir constructores
+    public City() { }
+    public City(EntityName name, Region region)
+    {
+        Name = name;
+        Region = region;
+    }
 }

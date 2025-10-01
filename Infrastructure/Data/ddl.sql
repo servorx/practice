@@ -44,3 +44,11 @@ CREATE TABLE IF NOT EXISTS branches (
     CONSTRAINT fk_branch_city FOREIGN KEY (city_id) REFERENCES cities(id),
     CONSTRAINT fk_branch_company FOREIGN KEY (company_id) REFERENCES companies(id)
 ) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(80) NOT NULL UNIQUE,
+    password_hash VARCHAR(128) NOT NULL,
+    role VARCHAR(10) NOT NULL
+) ENGINE=INNODB;

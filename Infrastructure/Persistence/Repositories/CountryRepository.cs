@@ -19,14 +19,14 @@ public class CountryRepository(AppDbContext db) : ICountryRepository
     public async Task<int> AddAsync(Country country, CancellationToken ct = default)
     {
         await db.Countries.AddAsync(country, ct);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return country.Id;
     }
 
     public async Task<bool> UpdateAsync(Country country, CancellationToken ct = default)
     {
         db.Countries.Update(country);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 
@@ -37,7 +37,7 @@ public class CountryRepository(AppDbContext db) : ICountryRepository
             return false;
 
         db.Countries.Remove(country);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 }

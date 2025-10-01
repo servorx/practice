@@ -19,14 +19,14 @@ public class CityRepository(AppDbContext db) : ICityRepository
     public async Task<int> AddAsync(City city, CancellationToken ct = default)
     {
         await db.Cities.AddAsync(city, ct);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return city.Id;
     }
 
     public async Task<bool> UpdateAsync(City city, CancellationToken ct = default)
     {
         db.Cities.Update(city);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 
@@ -37,7 +37,7 @@ public class CityRepository(AppDbContext db) : ICityRepository
             return false;
 
         db.Cities.Remove(city);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 }

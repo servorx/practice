@@ -19,14 +19,14 @@ public class CompanyRepository(AppDbContext db) : ICompanyRepository
     public async Task<int> AddAsync(Company company, CancellationToken ct = default)
     {
         await db.Companies.AddAsync(company, ct);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return company.Id;
     }
 
     public async Task<bool> UpdateAsync(Company company, CancellationToken ct = default)
     {
         db.Companies.Update(company);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 
@@ -37,7 +37,7 @@ public class CompanyRepository(AppDbContext db) : ICompanyRepository
             return false;
 
         db.Companies.Remove(company);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 }

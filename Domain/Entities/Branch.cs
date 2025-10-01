@@ -13,4 +13,16 @@ public class Branch
     // estos son las relaciones
     public City City { get; set; } = null!;
     public Company Company { get; set; } = null!;
+    // definir constructores 
+    public Branch() { }
+    public Branch(EntityNumber numberCommercial, Address address, Email email, ContactName contactName, PhoneNumber phone, City city, Company company)
+    {
+        NumberCommercial = numberCommercial;
+        Address = address;
+        Email = email;
+        ContactName = contactName;
+        Phone = phone;
+        City = city;
+        Company = company;
+    }
 }

@@ -30,7 +30,7 @@
   - [x] `ICompanyRepository.cs`
   - [x] `IBranchRepository.cs`
 - [x] Definir `IUnitOfWork.cs` con métodos `SaveChangesAsync()`
-
+- [] Crear `IUserRepository.cs`
 ---
 
 ## 📌 4. Infrastructure — Repositories & Unit of Work
@@ -41,6 +41,7 @@
   - [x] `CityRepository.cs`
   - [x] `CompanyRepository.cs`
   - [x] `BranchRepository.cs`
+  - [] `UserRepository.cs`
 - [x] Implementar `UnitOfWork` en `Infrastructure/UnitOfWork`
 
 ---
@@ -110,4 +111,6 @@
 
 
 # TODO 
-tengo que mirar bien los repositorios con lo de Task.CompletedTask o db.SaveChangesAsync(ct);
+tengo que mirar bien los repositorios con lo de Task.CompletedTask o Task.CompletedTask;
+
+cambiar todas las instancias de las interfaces a UnitOfWork

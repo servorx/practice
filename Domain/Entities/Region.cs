@@ -8,4 +8,11 @@ public class Region
     public EntityName Name { get; set; } = null!;
     // Relaciones
     public Country Country { get; set; } = null!;
+    // establecer constructor
+    public  Region() { }
+    public Region(EntityName name, Country country)
+    {
+        Name = name;
+        Country = country;
+    }
 }

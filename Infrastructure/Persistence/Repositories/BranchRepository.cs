@@ -19,14 +19,14 @@ public class BranchRepository(AppDbContext db) : IBranchRepository
     public async Task<int> AddAsync(Branch branch, CancellationToken ct = default)
     {
         await db.Branches.AddAsync(branch, ct);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return branch.Id;
     }
 
     public async Task<bool> UpdateAsync(Branch branch, CancellationToken ct = default)
     {
         db.Branches.Update(branch);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 
@@ -37,7 +37,7 @@ public class BranchRepository(AppDbContext db) : IBranchRepository
             return false;
 
         db.Branches.Remove(branch);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 }   

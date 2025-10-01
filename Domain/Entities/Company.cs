@@ -11,4 +11,14 @@ public class Company
     public Email Email { get; set; } = null!;
     // Relaciones
     public City City { get; set; } = null!;
+    // establecer constructor
+    public Company() { }
+    public Company(EntityName name, UkNiu ukNiu, Address address, Email email, City city)
+    {
+        Name = name;
+        UkNiu = ukNiu;
+        Address = address;
+        Email = email;
+        City = city;
+    }
 }

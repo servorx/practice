@@ -19,14 +19,14 @@ public class RegionRepository(AppDbContext db) : IRegionRepository
     public async Task<int> AddAsync(Region region, CancellationToken ct = default)
     {
         await db.Regions.AddAsync(region, ct);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return region.Id;
     }
 
     public async Task<bool> UpdateAsync(Region region, CancellationToken ct = default)
     {
         db.Regions.Update(region);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 
@@ -37,7 +37,7 @@ public class RegionRepository(AppDbContext db) : IRegionRepository
             return false;
 
         db.Regions.Remove(region);
-        await db.SaveChangesAsync(ct);
+        await Task.CompletedTask;
         return true;
     }
 }
