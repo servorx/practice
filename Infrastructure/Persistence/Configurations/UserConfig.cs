@@ -1,6 +1,6 @@
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Practice.Domain.Entities;
 
 namespace Practice.Infrastructure.Persistence.Configurations
 {
