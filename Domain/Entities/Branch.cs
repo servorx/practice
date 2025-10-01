@@ -5,7 +5,7 @@ using Domain.ValueObjects;
 public class Branch
 {
     public int Id { get; set; }
-    public EntityName NumberCommercial { get; set; } = null!;
+    public EntityNumber NumberCommercial { get; set; } = null!;
     public Address Address { get; set; } = null!;
     public Email Email { get; set; } = null!;
     public ContactName ContactName { get; set; } = null!;

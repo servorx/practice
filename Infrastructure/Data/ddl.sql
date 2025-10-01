@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS branches (
     address VARCHAR(80) NOT NULL,
     email VARCHAR(80) NOT NULL,
     contact_name VARCHAR(50) NOT NULL,
-    phone VARCHAR(25) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
     city_id INT NOT NULL,
     company_id INT NOT NULL,
     CONSTRAINT fk_branch_city FOREIGN KEY (city_id) REFERENCES cities(id),

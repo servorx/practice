@@ -1,28 +1,24 @@
-# ✅ TODO.md — Backend Practice Project
-
-## 📌 1. Domain Layer (Entidades del negocio)
-- [ ] Crear carpeta `Domain/Entities`
-- [ ] Definir entidad `Country`
-- [ ] Definir entidad `Region`
-- [ ] Definir entidad `City`
-- [ ] Definir entidad `Company`
-- [ ] Definir entidad `Branch`
-- [ ] Crear carpeta `Domain/ValueObjects` (ej: Email, Phone, etc. si aplica)
-- [ ] Revisar reglas de negocio y restricciones de cada entidad
-
----
+## 📌 1. Domain — Entities & ValueObjects
+- [x] Crear el ddl.sql en `Infrastructure/Data`
+- [x] Crear carpeta `Domain/Entities`
+  - [x] `Country.cs`
+  - [x] `Region.cs`
+  - [x] `City.cs`
+  - [x] `Company.cs`
+  - [x] `Branch.cs`
+- [x] Crear carpeta `Domain/ValueObjects`
 
 ## 📌 2. Infrastructure — Persistence
-- [ ] Crear `AppDbContext` en `Infrastructure/Persistence`
-- [ ] Configurar DbSets para todas las entidades
-- [ ] Crear carpeta `Configurations`
-  - [ ] `CountryConfiguration.cs`
-  - [ ] `RegionConfiguration.cs`
-  - [ ] `CityConfiguration.cs`
-  - [ ] `CompanyConfiguration.cs`
-  - [ ] `BranchConfiguration.cs`
-- [ ] Usar Fluent API para llaves primarias, foráneas y restricciones
-- [ ] Verificar conexión con `appsettings.json`
+- [x] Crear `AppDbContext` en `Infrastructure/Persistence`
+- [x] Configurar DbSets para todas las entidades
+- [x] Crear carpeta `Configurations`
+  - [x] `CountryConfiguration.cs`
+  - [x] `RegionConfiguration.cs`
+  - [x] `CityConfiguration.cs`
+  - [x] `CompanyConfiguration.cs`
+  - [x] `BranchConfiguration.cs`
+- [x] Usar Fluent API para llaves primarias, foráneas y restricciones
+- [x] Verificar conexión con `appsettings.json`
 
 ---
 
@@ -109,3 +105,9 @@
 - [ ] Validaciones con FluentValidation
 - [ ] Logging centralizado (Serilog)
 - [ ] Documentación en Swagger
+
+
+
+# TODO 
+verificar si en la configuracion se debe de colocar el mapeo de los campos de la tabla o del ValueObjects
+

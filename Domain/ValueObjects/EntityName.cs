@@ -8,9 +8,10 @@ public record EntityName
     {
         if (string.IsNullOrWhiteSpace(value))
             throw new ArgumentException("El nombre no puede estar vacío.");
-
-        if (value.Length > 100)
-            throw new ArgumentException("El nombre no puede exceder los 100 caracteres.");
+        else if (value.Length > 120)
+            throw new ArgumentException("El nombre no puede exceder los 120 caracteres.");
+        else if (value.Length < 2)
+            throw new ArgumentException("El nombre debe tener al menos 2 caracteres.");
 
         Value = value;
     }

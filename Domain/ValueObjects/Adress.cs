@@ -6,11 +6,13 @@ public record Address
 
     public Address(string value)
     {
+        // estas son las validaciones que se van a aplicar
         if (string.IsNullOrWhiteSpace(value))
             throw new ArgumentException("La dirección no puede estar vacía.");
-
-        if (value.Length < 5)
+        else if (value.Length < 5)
             throw new ArgumentException("La dirección debe tener al menos 5 caracteres.");
+        else if (value.Length > 80)
+            throw new ArgumentException("La dirección no puede exceder los 80 caracteres.");
 
         Value = value;
     }
