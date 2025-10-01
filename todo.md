@@ -34,13 +34,14 @@
 ---
 
 ## 📌 4. Infrastructure — Repositories & Unit of Work
-- [ ] Implementar repositorios en `Infrastructure/Repositories`
-  - [ ] `CountryRepository.cs`
-  - [ ] `RegionRepository.cs`
-  - [ ] `CityRepository.cs`
-  - [ ] `CompanyRepository.cs`
-  - [ ] `BranchRepository.cs`
-- [ ] Implementar `UnitOfWork` en `Infrastructure/UnitOfWork`
+<!-- se usa Task.CompletedTask porque se usa el UnitOfWork en el Handler -->
+- [x] Implementar repositorios en `Infrastructure/Repositories`
+  - [x] `CountryRepository.cs`
+  - [x] `RegionRepository.cs`
+  - [x] `CityRepository.cs`
+  - [x] `CompanyRepository.cs`
+  - [x] `BranchRepository.cs`
+- [x] Implementar `UnitOfWork` en `Infrastructure/UnitOfWork`
 
 ---
 
@@ -109,5 +110,4 @@
 
 
 # TODO 
-verificar si en la configuracion se debe de colocar el mapeo de los campos de la tabla o del ValueObjects
-
+tengo que mirar bien los repositorios con lo de Task.CompletedTask o db.SaveChangesAsync(ct);

@@ -10,6 +10,6 @@ public interface IUnitOfWork
     ICityRepository Cities { get; }
     ICompanyRepository Companies { get; }
     IBranchRepository Branches { get; }
-    Task<int> SaveChangesAsync();
+    Task<int> SaveChangesAsync(CancellationToken ct = default);
     Task ExecuteInTransactionAsync(Func<CancellationToken, Task> operation, CancellationToken ct = default);
 }
