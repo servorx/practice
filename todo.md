@@ -116,3 +116,7 @@
 tengo que mirar bien los repositorios con lo de Task.CompletedTask o Task.CompletedTask;
 
 cambiar todas las instancias de las interfaces a UnitOfWork
+
+tengo que implementarle el cors 
+
+tengo que revisar por que el put no funciona, tengo que modificar la estrcutura del put 

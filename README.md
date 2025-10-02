@@ -197,13 +197,14 @@ cd <nombre-del-proyecto>
 ### 2. Configurar la base de datos
 ```json
 "ConnectionStrings": {
-  "Postgres": "Host=localhost;Database=cleanshop_db;Username=postgres;Password=tu_password"
+  "Postgres": "Host=db;Port=5432;Database=practice;Username=postgres;Password=postgres"
 }
 ```
 
 ### 3. Crear la base de datos
 ```bash
-docker-compose up -d
+dotnet ef migrations add InitialCreate -p Infrastructure/ -s Api/ -o Data/Migrations
+dotnet ef database update -p Infrastructure/ -s Api/ 
 ```
 
 ### 4. Ejecutar la aplicación
@@ -215,3 +216,46 @@ dotnet run
 Swagger se puede acceder a través de la siguiente URL:
 
 `https://localhost:5001/swagger/index.html`
+
+## Docker
+
+### 1. Correr el contenedor
+
+```bash
+docker compose up -d --build
+```
+### 2. Verificar que todo funciona
+Revisa que tengas solo 3 contenedores corriendo:
+```bash
+docker ps -a
+```
+deberia de aparecer algo como esto:
+
+```bash
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS          PORTS                    NAMES
+practice-db → Postgres en 5434
+
+practice-api → tu API en 8081
+
+practice-pgadmin → PgAdmin en 8080
+```
+
+### 3. Conectar al pgAdmin
+Chequea que estén en la misma red practice_default:
+```bash
+docker network inspect practice_default
+```
+
+### 4. Crear la migración
+ejecutar este comando en la carpeta del proyecto:
+```bash
+dotnet ef migrations add InitialCreate -p Infrastructure/ -s Api/ -o Data/Migrations
+```
+actualizar la base de datos:
+```bash
+dotnet ef database update -p Infrastructure/ -s Api/ --connection "Host=localhost;Port=5434;Database=practice;Username=postgres;Password=postgres"
+```
+### 5. Conectar a la pagina de pgAdmin
+entra a la pagina de pgAdmin en `http://localhost:8080`
+entrar a la pagina de swagger en `http://localhost:8081/`
+

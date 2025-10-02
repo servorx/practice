@@ -5,25 +5,25 @@ WORKDIR /app
 
 # ---------- Build ----------
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
+WORKDIR /
 
 # Copiamos primero los .csproj para aprovechar caché
-COPY CleanShop.Api/CleanShop.Api.csproj CleanShop.Api/
-COPY CleanShop.Application/CleanShop.Application.csproj CleanShop.Application/
-COPY CleanShop.Domain/CleanShop.Domain.csproj CleanShop.Domain/
-COPY CleanShop.Infrastructure/CleanShop.Infrastructure.csproj CleanShop.Infrastructure/
+COPY Api/Api.csproj Api/
+COPY Application/Application.csproj Application/
+COPY Domain/Domain.csproj Domain/
+COPY Infrastructure/Infrastructure.csproj Infrastructure/
 
-RUN dotnet restore CleanShop.Api/CleanShop.Api.csproj
+RUN dotnet restore Api/Api.csproj
 
 # Copiamos el resto del código
 COPY . .
 
 # Compilamos
-WORKDIR /src/CleanShop.Api
+WORKDIR /Api
 RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
 
 # ---------- Final ----------
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "CleanShop.Api.dll"]
+ENTRYPOINT ["dotnet", "Api.dll"]
