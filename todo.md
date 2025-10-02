@@ -80,6 +80,8 @@
 ---
 
 ## 📌 7. Dependency Injection (DI)
+- [ ] Revisar `Program.cs`
+- [ ] Revisar el ApplicationServiceExtensions
 - [ ] Registrar DbContext en `Program.cs`
 - [ ] Registrar UnitOfWork
 - [ ] Registrar Repositories
