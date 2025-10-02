@@ -258,4 +258,3 @@ dotnet ef database update -p Infrastructure/ -s Api/ --connection "Host=localhos
 ### 5. Conectar a la pagina de pgAdmin
 entra a la pagina de pgAdmin en `http://localhost:8080`
 entrar a la pagina de swagger en `http://localhost:8081/`
-
