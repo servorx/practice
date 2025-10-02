@@ -44,8 +44,6 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-
-
 // aqui se usa la ultima a menos que se espeficique que politica se va a usar en cada endpoint
 app.UseCors("CorsPolicy");
 app.UseCors("CorsPolicyUrl");
