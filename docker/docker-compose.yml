@@ -1,34 +1,48 @@
+version: "3.9"
+
 services:
   db:
     image: postgres:16
+    container_name: practice-db
     environment:
-      POSTGRES_DB: cleanshop
+      POSTGRES_DB: practice
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5433:5432"
+      - "5434:5432"   # Puerto local 5434, interno siempre 5432
     volumes:
-      - cleanshop_data:/var/lib/postgresql/data
+      - practice_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d cleanshop"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d practice"]
       interval: 5s
       timeout: 3s
       retries: 10
 
   api:
     build:
-      context: ..                        # RAÍZ del repo (donde están todas las carpetas CleanShop.*)
-      dockerfile: CleanShop.Api/Api.Dockerfile
+      context: ..                    # raíz del repo (donde está practice.sln)
+      dockerfile: Api/Api.Dockerfile
+    container_name: practice-api
     environment:
-      # .NET 8+ soporta ASPNETCORE_HTTP_PORTS como alternativa simple.
-      ASPNETCORE_HTTP_PORTS: "8080"   # o usa ASPNETCORE_URLS si prefieres
+      ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__Default: "Host=db;Port=5432;Database=cleanshop;Username=postgres;Password=postgres"
+      ConnectionStrings__Postgres: "Host=db;Port=5432;Database=practice;Username=postgres;Password=postgres"
     ports:
       - "8081:8080"
     depends_on:
       db:
         condition: service_healthy
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: practice-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
 volumes:
-  cleanshop_data:
+  practice_data:
